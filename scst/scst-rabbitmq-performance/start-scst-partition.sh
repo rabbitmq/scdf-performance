@@ -25,5 +25,5 @@ do
     --logging.level.root=WARN \
     --spring.cloud.stream.bindings.input.consumer.partitioned=true \
     --spring.cloud.stream.instanceCount=${PARTITIONS} \
-    --spring.cloud.stream.instanceIndex=$i --server.port=8081 > partition-$i.txt &
+    --spring.cloud.stream.instanceIndex=$i --server.port=808$i > partition-$i.txt &
 done
