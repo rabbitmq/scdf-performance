@@ -13,5 +13,10 @@ wget https://dl.bintray.com/rabbitmq/rabbitmq-server-deb/rabbitmq-server_3.7.0-1
 sudo dpkg --install rabbitmq-server_3.7.0-1_all.deb
 sudo rm rabbitmq-server_3.7.0-1_all.deb
 
+sudo apt-get install haproxy
+sudo cp etc/haproxy/haproxy.cfg /etc/haproxy/
+sudo haproxy -f /etc/haproxy/haproxy.cfg
+
+
 sleep 3
 

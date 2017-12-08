@@ -7,6 +7,7 @@ source .env
 ${RABBITMQ_CTL} add_vhost ${RABBITMQ_VHOST}
 ${RABBITMQ_CTL} add_user ${RABBITMQ_USERNAME} ${RABBITMQ_PASSWORD} || true
 ${RABBITMQ_CTL} set_permissions -p ${RABBITMQ_VHOST} ${RABBITMQ_USERNAME} ".*" ".*" ".*"
+${RABBITMQ_CTL} set_user_tags ${RABBITMQ_USERNAME} monitoring
 
 ${RABBITMQ_PLUGINS} enable rabbitmq_management rabbitmq_sharding rabbitmq_consistent_hash_exchange rabbitmq_random_exchange
 
