@@ -76,7 +76,10 @@ public class ScstRabbitMqPerformanceApplication implements CommandLineRunner {
                 latch.countDown();
 			}
 			if (currentCount.get() % printStatusCount == 0) {
-				System.out.println("Current count: " + currentCount + "   " + LocalDateTime.now());
+				System.out.println("Current count: " + currentCount + "   " + LocalDateTime.now() + " - " +
+					+ (currentCount.get() / ((float) (System.currentTimeMillis() - startTime.get()) / (float) 1000))
+					+ " messages per second"
+				);
 			}
 
 		}
