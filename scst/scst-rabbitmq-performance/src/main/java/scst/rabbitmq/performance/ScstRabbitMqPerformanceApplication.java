@@ -69,7 +69,7 @@ public class ScstRabbitMqPerformanceApplication implements CommandLineRunner {
 			if (currentCount.getAndIncrement() == 0) {
 				this.startTime.set(System.currentTimeMillis());
 			}
-			if (currentCount.incrementAndGet() == numMessages) {
+			if (numMessages != -1 && currentCount.incrementAndGet() == numMessages) {
 				System.out.println("Receive " + numMessages + " Stream... "
 					+ (numMessages / ((float) (System.currentTimeMillis() - startTime.get()) / (float) 1000))
 					+ " messages per second");
