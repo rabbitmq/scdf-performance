@@ -20,7 +20,7 @@ do
     --spring.cloud.stream.rabbit.bindings.input.consumer.exchangeType=direct \
     --spring.cloud.stream.rabbit.bindings.input.consumer.exchangeDurable=false \
     --spring.cloud.stream.rabbit.bindings.input.consumer.exchangeAutoDelete=false \
-    --spring.cloud.stream.rabbit.bindings.input.consumer.maxConcurrency=10 \
+    --spring.cloud.stream.rabbit.bindings.input.consumer.maxConcurrency=${SCST_MAX_CONCURRENCY} \
     --spring.cloud.stream.rabbit.bindings.input.consumer.prefetch=${SCST_PREFETCH} \
     --logging.level.root=WARN \
     --spring.cloud.stream.bindings.input.consumer.partitioned=true \
