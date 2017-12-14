@@ -2,5 +2,13 @@
 
 #set -ex
 
-wget https://dl.bintray.com/rabbitmq/java-tools-milestones/perf-test/2.0.0.RC4/rabbitmq-perf-test-2.0.0.RC4-bin.tar.gz
-tar xzf rabbitmq-perf-test-2.0.0.RC4-bin.tar.gz
+source .env
+
+rm -rf rabbitmq-perf-test
+git clone https://github.com/rabbitmq/rabbitmq-perf-test.git
+cd rabbitmq-perf-test
+git checkout ${PERF_TEST_TAG}
+cd ..
+./mvnw -f ./rabbitmq-perf-test/pom.xml clean package -P assemblies -DskipTests
+
+tar xzf rabbitmq-perf-test/target/rabbitmq-perf-test-${PERF_TEST_VERSION}-bin.tar.gz -C rabbitmq-perf-test/target
