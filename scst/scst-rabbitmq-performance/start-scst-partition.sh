@@ -22,6 +22,7 @@ do
     --spring.cloud.stream.rabbit.bindings.input.consumer.exchangeAutoDelete=false \
     --spring.cloud.stream.rabbit.bindings.input.consumer.maxConcurrency=${SCST_MAX_CONCURRENCY} \
     --spring.cloud.stream.rabbit.bindings.input.consumer.prefetch=${SCST_PREFETCH} \
+    --spring.cloud.stream.rabbit.bindings.input.consumer.txSize=${SCST_TX_SIZE} \
     --logging.level.root=WARN \
     --spring.cloud.stream.bindings.input.consumer.partitioned=true \
     --spring.cloud.stream.instanceCount=${PARTITIONS} \
