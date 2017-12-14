@@ -3,9 +3,9 @@
 ## Overview
 
 This project contains scripts to test performances of a
-[String Cloud Stream](https://cloud.spring.io/spring-cloud-stream/) application
+[Spring Cloud Stream](https://cloud.spring.io/spring-cloud-stream/) application
 using the [RabbitMQ](http://www.rabbitmq.com/) binder.
-The application is a simple String Cloud Stream sink.
+The application is a simple Spring Cloud Stream sink.
 
 There are 3 roles in this benchmark:
  * broker: it runs the RabbitMQ broker
@@ -41,7 +41,7 @@ Warnings:
  * go to the project repository: `cd scdf-performance/scst/scst-rabbitmq-performance`
  * install the JDK: `./install-java.sh`
  * install PerfTest: `./install-perf-test.sh`
- * build the String Cloud Stream application: `./mvnw clean package`
+ * build the Spring Cloud Stream application: `./mvnw clean package`
  
 ### Publisher
 
@@ -62,7 +62,7 @@ There are different supported workloads.
 
 ### Partition
 
-This workload uses String Cloud Stream native partition support. This translates to using
+This workload uses Spring Cloud Stream native partition support. This translates to using
 1 dedicated queue per partition. Note only 10 partitions at most are supported.
 
 #### Broker
