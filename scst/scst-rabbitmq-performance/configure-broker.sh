@@ -21,3 +21,10 @@ do
     ./rabbitmqadmin declare queue name=scst.partition-$i durable=true
     ./rabbitmqadmin declare binding source=scst.partition.$i destination=scst.partition-$i routing_key=$i
 done
+
+./rabbitmqadmin declare exchange name=scst.random type=x-random durable=true
+for (( i=0; i<$PARTITIONS; i++ ))
+do
+    ./rabbitmqadmin declare queue name=scst.random-$i durable=true
+    ./rabbitmqadmin declare binding source=scst.random destination=scst.random-$i
+done
