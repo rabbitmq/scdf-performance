@@ -4,13 +4,7 @@
 
 source .env
 
-
-if [ "$RABBITMQ_VHOST" == "/" ]
-then
-     encoded_vhost="%2f"
-else
-     encoded_vhost=$RABBITMQ_VHOST
-fi
+encoded_vhost=`python -c "import urllib; print urllib.quote('${RABBITMQ_VHOST}', safe='')"`
 
 declare -a perftest_opts
 
