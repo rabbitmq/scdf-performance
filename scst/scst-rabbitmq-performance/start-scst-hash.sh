@@ -24,6 +24,7 @@ do
     --spring.cloud.stream.rabbit.bindings.input.consumer.prefetch=${SCST_PREFETCH} \
     --spring.cloud.stream.rabbit.bindings.input.consumer.txSize=${SCST_TX_SIZE} \
     --logging.level.root=WARN \
-    --spring.cloud.stream.bindings.input.consumer.partitioned=false \
-    --spring.cloud.stream.instanceIndex=$i --server.port=808$i > sharding-$i.txt &
+    --spring.cloud.stream.bindings.input.consumer.partitioned=true \
+    --spring.cloud.stream.instanceCount=${PARTITIONS} \
+    --spring.cloud.stream.instanceIndex=$i --server.port=808$i > hash-$i.txt &
 done
