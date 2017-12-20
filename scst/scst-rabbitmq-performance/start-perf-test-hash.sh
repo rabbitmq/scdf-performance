@@ -8,4 +8,5 @@ encoded_vhost=`python -c "import urllib; print urllib.quote('${RABBITMQ_VHOST}',
 
 ${PERF_TEST_HOME}/bin/runjava com.rabbitmq.perf.PerfTest \
    --uri amqp://$RABBITMQ_USERNAME:$RABBITMQ_PASSWORD@$RABBITMQ_HOST:$RABBITMQ_PORT/$encoded_vhost \
-   -x ${PARTITIONS} -y 0 --predeclared --size 1000 -exchange "scst.hash" --random-routing-key > perf-test.txt &
+   -x ${PARTITIONS} -y 0 --predeclared --size 1000 -exchange "scst.hash" \
+   --flag ${MSG_FLAG} --random-routing-key > perf-test.txt &
