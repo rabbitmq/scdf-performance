@@ -6,7 +6,8 @@ source .env
 
 # user configuration
 ${RABBITMQ_CTL} add_vhost ${RABBITMQ_VHOST}
-${RABBITMQ_CTL} add_user ${RABBITMQ_USERNAME} ${RABBITMQ_PASSWORD} || true
+${RABBITMQ_CTL} delete_user ${RABBITMQ_USERNAME}
+${RABBITMQ_CTL} add_user ${RABBITMQ_USERNAME} ${RABBITMQ_PASSWORD}
 ${RABBITMQ_CTL} set_permissions -p ${RABBITMQ_VHOST} ${RABBITMQ_USERNAME} ".*" ".*" ".*"
 ${RABBITMQ_CTL} set_user_tags ${RABBITMQ_USERNAME} administrator
 
