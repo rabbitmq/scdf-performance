@@ -4,7 +4,7 @@
 
 This project contains scripts to test performances of a
 [Spring Cloud Stream](https://cloud.spring.io/spring-cloud-stream/) application
-using the [RabbitMQ](http://www.rabbitmq.com/) binder.
+using the [RabbitMQ](https://www.rabbitmq.com/) binder.
 The application is a simple Spring Cloud Stream sink.
 
 There are 3 roles in this benchmark:
